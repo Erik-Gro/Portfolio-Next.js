@@ -1,14 +1,15 @@
-"use client"
-import { useState } from 'react';
-import { NavbarItems } from './navbarItems/NavbarItems';
+"use client";
 
-const Navbar: React.FC = ({ }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const toggleIsOpen = () => setIsOpen(!isOpen);
+import { useState, useCallback } from 'react';
+import  NavbarItems  from './navbarItems/NavbarItems';
 
-  
-  const [isOpenGameModal, setOpenGameModal] = useState<boolean>(false);
-  const toggleIsGameModalOpen = () => setOpenGameModal(!isOpenGameModal);
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenGameModal, setOpenGameModal] = useState(false);
+
+  // Use useCallback to memoize functions and avoid unnecessary re-renders
+  const toggleIsOpen = useCallback(() => setIsOpen(prev => !prev), []);
+  const toggleIsGameModalOpen = useCallback(() => setOpenGameModal(prev => !prev), []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
@@ -23,9 +24,10 @@ const Navbar: React.FC = ({ }) => {
             className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
             aria-label="Toggle menu"
           >
-            <img src={isOpen ? '/assets/close.svg' : '/assets/menu.svg'} alt="toggle" className="w-6 h-6" />
+            <img src={isOpen ? '/assets/close.svg' : '/assets/menu.svg'} alt="Toggle menu" className="w-6 h-6" />
           </button>
 
+          {/* Uncomment this if you want to use it */}
           {/* <nav className="sm:flex hidden">
             <NavbarItems onPlayGameClick={toggleIsGameModalOpen} />
           </nav> */}
