@@ -26,9 +26,9 @@ const Navbar: React.FC = ({ }) => {
             <img src={isOpen ? '/assets/close.svg' : '/assets/menu.svg'} alt="toggle" className="w-6 h-6" />
           </button>
 
-          <nav className="sm:flex hidden">
+          {/* <nav className="sm:flex hidden">
             <NavbarItems onPlayGameClick={toggleIsGameModalOpen} />
-          </nav>
+          </nav> */}
         </div>
       </div>
 
