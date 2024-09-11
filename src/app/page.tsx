@@ -1,4 +1,4 @@
-import Navbar from "@/Sections/navbar/Navbar";
+import Navbar from "@/sections/navbar/Navbar";
 
 export default function Home() {
 
