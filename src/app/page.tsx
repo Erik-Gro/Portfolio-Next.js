@@ -1,10 +1,10 @@
-import Image from "next/image";
-import logo from '../public/favicon.ico';
+import Navbar from "@/Sections/navbar/Navbar";
 
 export default function Home() {
+
   return (
-    <>
-  <Image src={logo} alt="Logo" width={500} height={500} />;
-  </>
+    <main className="max-w-7xl mx-auto relative">
+      <Navbar/>
+    </main>
   );
 }
