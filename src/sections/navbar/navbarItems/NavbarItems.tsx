@@ -8,11 +8,10 @@ const NavbarItems: React.FC<NavbarItemsProps> = ({ onClick, onPlayGameClick }) =
 
   const navItems = useMemo(() => (
     navbarLinks.map((item: NavLink) => (
-      <li key={item.id} className="nav-li">
+      <li key={item.id} className="nav-li" onClick={onClick}>
         <a
           href={item.href}
           className="nav-li_a"
-          onClick={onClick}
         >
           {item.name}
         </a>
