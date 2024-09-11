@@ -1,5 +1,5 @@
 "use client"
-import '../../../app/globals.css'; 
+import '../../app/globals.css'; 
 import { useState } from 'react';
 import { NavbarItems } from './navbarItems/NavbarItems';
 
