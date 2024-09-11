@@ -7,21 +7,17 @@ import { NavLink, NavbarItemsProps } from "./types";
 const NavbarItems: React.FC<NavbarItemsProps> = ({ onClick, onPlayGameClick }) => {
 
   const navItems = useMemo(() => (
-    navbarLinks.map((item: NavLink) => (
-      <li key={item.id} className="nav-li" onClick={onClick}>
-        <a
-          href={item.href}
-          className="nav-li_a"
-        >
-          {item.name}
-        </a>
-      </li>
-    ))
-  ), []);
-
-  return (
-    <ul className="nav-ul">
-      {navItems}
+    <>
+      {navbarLinks.map((item: NavLink) => (
+        <li key={item.id} className="nav-li" onClick={onClick}>
+          <a
+            href={item.href}
+            className="nav-li_a"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
       <li className="nav-li">
         <button
           onClick={onPlayGameClick}
@@ -30,6 +26,12 @@ const NavbarItems: React.FC<NavbarItemsProps> = ({ onClick, onPlayGameClick }) =
           Play Game
         </button>
       </li>
+    </>
+  ), []);
+
+  return (
+    <ul className="nav-ul">
+      {navItems}
     </ul>
   );
 };
