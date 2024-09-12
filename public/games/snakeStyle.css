@@ -1,0 +1,32 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    background-color:  black;
+  }
+  
+  #game-board {
+    background: radial-gradient(circle, rgb(63, 62, 62) 0%, rgba(0,0,30,1) 100%);
+    width: 95vmin;
+    height: 95vmin;
+    display: grid;
+    grid-template-rows: repeat(21, 1fr);
+    grid-template-columns: repeat(21, 1fr);
+    border: 2px solid #00FF00; /* Neon border effect */
+    box-shadow: 0 0 15px rgba(0,255,0,0.7); /* Neon glow effect */
+  }
+  
+  .snake {
+    background-color: rgba(29, 202, 29, 0.8); /* Semi-transparent neon green */
+    border: .25px solid black;
+    box-shadow: 0 0 5px rgba(29, 202, 29, 0.8); /* Neon glow effect */
+  }
+  
+  .apple {
+    background-color: #A020F0;
+    border: .25px solid black;
+    box-shadow: 0 0 5px #A020F0; /* Neon glow effect */
+  }

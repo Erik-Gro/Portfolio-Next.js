@@ -2,12 +2,12 @@
 
 import { useState, useCallback } from 'react';
 import  NavbarItems  from './navbarItems/NavbarItems';
+import GameModal from './game/gameModal';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenGameModal, setOpenGameModal] = useState(false);
 
-  // Use useCallback to memoize functions and avoid unnecessary re-renders
   const toggleIsOpen = useCallback(() => setIsOpen(prev => !prev), []);
   const toggleIsGameModalOpen = useCallback(() => setOpenGameModal(prev => !prev), []);
 
@@ -27,10 +27,6 @@ const Navbar: React.FC = () => {
             <img src={isOpen ? '/assets/close.svg' : '/assets/menu.svg'} alt="Toggle menu" className="w-6 h-6" />
           </button>
 
-          {/* Uncomment this if you want to use it */}
-          {/* <nav className="sm:flex hidden">
-            <NavbarItems onPlayGameClick={toggleIsGameModalOpen} />
-          </nav> */}
         </div>
       </div>
 
@@ -39,6 +35,7 @@ const Navbar: React.FC = () => {
           <NavbarItems onClick={toggleIsOpen} onPlayGameClick={toggleIsGameModalOpen} />
         </nav>
       </div>
+      {isOpenGameModal && <GameModal isOpen={isOpenGameModal} onClose={toggleIsGameModalOpen} />}
     </header>
   );
 };

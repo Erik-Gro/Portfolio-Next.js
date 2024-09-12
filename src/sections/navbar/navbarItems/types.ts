@@ -5,7 +5,7 @@ export interface NavLink {
   }
   
   export interface NavbarItemsProps {
-    onClick?: () => void; // Function for click events, no arguments
-    onPlayGameClick: () => void; // Function for play game button click
+    onClick?: () => void; 
+    onPlayGameClick: () => void; 
   }
   
