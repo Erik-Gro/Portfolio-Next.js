@@ -6,13 +6,7 @@ let snakeDirection = { x:0, y:+1 };
 let snakeBody = [
   { x: 9, y: 9, head: 1, tail: 2 },
 ];
-let ssnakeBody = [
-  { x: 9, y: 9, head: 1, tail: 2 },
-  { x: 9, y: 10, head: 1, tail: 1 },
-  { x: 9, y: 11, head: 1, tail: 1 },
-  { x: 9, y: 12, head: 1, tail: 1 },
-  { x: 9, y: 13, head: 2, tail: 1 },
-];
+
 let apple = {x:9, y:18}
 window.addEventListener("keydown", e => {
 if (f == 1) return

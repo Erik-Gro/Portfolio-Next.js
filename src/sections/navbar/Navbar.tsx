@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useCallback } from 'react';
-import  NavbarItems  from './navbarItems/NavbarItems';
+import NavbarItems from './navbarItems/NavbarItems';
 import GameModal from './game/gameModal';
+import Image from 'next/image'; // Import Image from next/image
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
-            Eric's Portfolio
+            Eric&apos;s Portfolio
           </a>
 
           <button
@@ -24,7 +25,12 @@ const Navbar: React.FC = () => {
             className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
             aria-label="Toggle menu"
           >
-            <img src={isOpen ? '/assets/close.svg' : '/assets/menu.svg'} alt="Toggle menu" className="w-6 h-6" />
+            <Image
+              src={isOpen ? '/assets/close.svg' : '/assets/menu.svg'}
+              alt="Toggle menu"
+              width={24}
+              height={24}
+            />
           </button>
           <nav className="sm:flex hidden">
             <NavbarItems onPlayGameClick={toggleIsGameModalOpen} />
@@ -43,3 +49,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+
