@@ -3,7 +3,7 @@
 import { useState, useCallback } from 'react';
 import NavbarItems from './navbarItems/NavbarItems';
 import GameModal from './game/gameModal';
-import Image from 'next/image'; // Import Image from next/image
+import Image from 'next/image'; 
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
