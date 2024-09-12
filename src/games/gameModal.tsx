@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useRef } from 'react';
 
 interface GameModalProps {
@@ -12,7 +14,7 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
     if (isOpen) {
       document.body.classList.add('no-scroll');
       if (iframeRef.current) {
-        iframeRef.current.src = '/games/tetris/game.html';
+        iframeRef.current.src = '/games/snake/game.html';
       }
     } else {
       document.body.classList.remove('no-scroll');
