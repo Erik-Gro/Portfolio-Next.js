@@ -11,6 +11,7 @@ import * as THREE from 'three'
 import React, { memo, useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import { ThreeObjectProps } from '../types/shared'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -21,16 +22,11 @@ type GLTFResult = GLTF & {
   }
 }
 
-interface ReactLogoProps {
-  position: [number, number, number];
-  scale:[number, number, number]
-}
-
-export function ReactLogo(props:ReactLogoProps ) {
+export function ReactLogo({ position = [0,0,0], scale = [1,1,1], ...props }:ThreeObjectProps) {
   const { nodes, materials } = useGLTF('/models/react.glb') as GLTFResult
   return (
     <Float floatIntensity={10} >
-    <group position={props.position} scale={props.scale} dispose={null}>
+    <group position={position} scale={scale} dispose={null}>
       <mesh
         castShadow
         receiveShadow

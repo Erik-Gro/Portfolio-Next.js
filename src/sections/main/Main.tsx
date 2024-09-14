@@ -7,6 +7,7 @@ import CanvasLoader from '@/shared/loaders/CanvasLoader';
 import ReactLogo from './components/ReactLogo';
 import useCalculateSizes from './data/Sizes';
 import { useMediaQuery } from 'react-responsive';
+import Macbook from './components/Macbook';
 
 export function Main() {
 
@@ -45,6 +46,7 @@ export function Main() {
 
             <group>
               <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale}/>
+              <Macbook position={sizes.macBookPosition}/>
             </group>
 
             <ambientLight intensity={1} color={"white"} />
