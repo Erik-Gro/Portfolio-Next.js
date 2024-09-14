@@ -10,6 +10,7 @@ import { useMediaQuery } from 'react-responsive';
 import Macbook from './components/Macbook';
 import Rotate from '../utils/Rotate';
 import {Room} from './components/Room';
+import { PythonLogo } from './components/PythonLogo';
 
 export function Main() {
 
@@ -49,6 +50,7 @@ export function Main() {
             <group>
               <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale}/>
               <Macbook position={sizes.macBookPosition}/>
+              <PythonLogo  position={sizes.pythonPosition} />
             </group>
 
             <ambientLight intensity={0.8}  />
