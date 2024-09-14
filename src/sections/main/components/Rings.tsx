@@ -1,35 +1,43 @@
 import { useRef, useCallback } from 'react';
-import { Center, useTexture } from '@react-three/drei';
-import { useFrame } from '@react-three/fiber';
+import { Center, Float, useTexture } from '@react-three/drei';
+import { useFrame, ThreeEvent } from '@react-three/fiber';
+import * as THREE from 'three';
 
-const Rings = ({ position }) => {
-  const refList = useRef([]);
-  const getRef = useCallback((mesh) => {
+interface RingsProps {
+  position: [number, number, number];
+}
+
+const Rings: React.FC<RingsProps> = ({ position=[0,0,0] }) => {
+  const refList = useRef<THREE.Mesh[]>([]);
+  
+  // Callback to add meshes to refList
+  const getRef = useCallback((mesh: THREE.Mesh | null) => {
     if (mesh && !refList.current.includes(mesh)) {
       refList.current.push(mesh);
     }
   }, []);
 
+  // Load texture
   const texture = useTexture('textures/rings.png');
 
-  // UseFrame hook for handling animations
+  // UseFrame for animation
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
     
     refList.current.forEach((r, index) => {
-      // Setting the position based on props
-      r.position.set(position[0], position[1], position[2]);
+      // Set position based on props
+    //   r.position.set(position[0], position[1], position[2]);
 
-      // Rotating rings over time, staggered by index
-      const speed = 0.5 + index * 0.1; // Staggered rotation speed for each ring
+      // Staggered rotation
+      const speed = 0.5 + index * 0.1;
       r.rotation.x = elapsedTime * speed;
       r.rotation.y = elapsedTime * speed;
     });
   });
 
   return (
-    <Center>
-      <group scale={0.5}>
+    <Float floatIntensity={10}>
+      <group scale={0.5} position={[0,0,0]}>
         {Array.from({ length: 4 }, (_, index) => (
           <mesh key={index} ref={getRef}>
             <torusGeometry args={[(index + 1) * 0.5, 0.1]} />
@@ -37,7 +45,7 @@ const Rings = ({ position }) => {
           </mesh>
         ))}
       </group>
-    </Center>
+    </Float>
   );
 };
 
