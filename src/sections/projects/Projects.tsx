@@ -1,5 +1,5 @@
 "use client"
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, memo, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import { useTrail, animated } from '@react-spring/web'; 
@@ -40,7 +40,7 @@ const Projects = () => {
       from: { opacity: 0 },
       reset: true
     });
-  }, [selectedProjectIndex, api]);
+  }, [selectedProjectIndex]);
 
   return (
     <section className="c-space my-20">
@@ -117,4 +117,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default memo(Projects);
