@@ -37,7 +37,7 @@ const Rings: React.FC<RingsProps> = ({ position=[0,0,0] }) => {
 
   return (
     <Float floatIntensity={10}>
-      <group scale={0.5} position={[0,0,0]}>
+      <group scale={0.5} position={position}>
         {Array.from({ length: 4 }, (_, index) => (
           <mesh key={index} ref={getRef}>
             <torusGeometry args={[(index + 1) * 0.5, 0.1]} />
