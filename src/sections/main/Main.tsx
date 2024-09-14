@@ -8,6 +8,8 @@ import ReactLogo from './components/ReactLogo';
 import useCalculateSizes from './data/Sizes';
 import { useMediaQuery } from 'react-responsive';
 import Macbook from './components/Macbook';
+import Rotate from '../utils/Rotate';
+import {Room} from './components/Room';
 
 export function Main() {
 
@@ -40,17 +42,17 @@ export function Main() {
               fade={true}    // Whether stars should fade when moving away
             />
 
-            {/* <HeroCamera isMobile={isMobile}>
-              <Desk scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
-            </HeroCamera> */}
+            <Rotate isMobile={isMobile}>
+              <Room scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
+            </Rotate>
 
             <group>
               <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale}/>
               <Macbook position={sizes.macBookPosition}/>
             </group>
 
-            <ambientLight intensity={1} color={"white"} />
-            {/* <directionalLight position={[0, -10, 0]} intensity={1} /> */}
+            <ambientLight intensity={0.8}  />
+            <directionalLight position={[0, 3, 10]} intensity={1} />
           </Suspense>
           </Canvas>
       </div>

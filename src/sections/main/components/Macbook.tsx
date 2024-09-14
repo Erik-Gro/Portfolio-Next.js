@@ -31,41 +31,41 @@ type GLTFResult = GLTF & {
   const groupRef = useRef<THREE.Group>(null);
   
   // Use frame loop to animate the object
-  // useFrame(({ clock }, delta) => {
-  //   const elapsedTime = clock.getElapsedTime();
+  useFrame(({ clock }, delta) => {
+    const elapsedTime = clock.getElapsedTime();
 
-  //   if (groupRef.current) {
-  //     // Create a floating effect using sin function
-  //     groupRef.current.position.y = Math.sin(elapsedTime * 2) * 0.1; // Float up and down
+    if (groupRef.current) {
+      // Create a floating effect using sin function
+      groupRef.current.position.y = Math.sin(elapsedTime * 2) * 0.1; // Float up and down
 
-  //     // Continuous rotation along Y-axis and slight rotation on X-axis
-  //     groupRef.current.rotation.y += delta * 0.5; // Smooth Y-axis rotation
-  //     groupRef.current.rotation.x = Math.cos(elapsedTime) * 0.1; // Sway effect on X-axis
+      // Continuous rotation along Y-axis and slight rotation on X-axis
+      groupRef.current.rotation.y += delta * 0.5; // Smooth Y-axis rotation
+      groupRef.current.rotation.x = Math.cos(elapsedTime) * 0.1; // Sway effect on X-axis
 
-  //     // Create a wobble effect by scaling the object
-  //     const scaleFactor = 1 + Math.sin(elapsedTime * 3) * 0.05;
-  //     groupRef.current.scale.set(scaleFactor, scaleFactor, scaleFactor);
-  //   }
-  // });
+      // Create a wobble effect by scaling the object
+      const scaleFactor = 1 + Math.sin(elapsedTime * 3) * 0.05;
+      groupRef.current.scale.set(scaleFactor, scaleFactor, scaleFactor);
+    }
+  });
 
   return (
     <group ref={groupRef}  position={position} scale={scale} dispose={null}>
       <group position={[0.121, 0.007, 0]}>
         <mesh
-          castShadow
+          // castShadow
           receiveShadow
           geometry={nodes.Object_6.geometry}
           material={materials.MacBookPro}
         />
         <mesh
-          castShadow
+          // castShadow
           receiveShadow
           geometry={nodes.Object_8.geometry}
           material={materials.MacBookPro}
         />
       </group>
       <mesh
-        castShadow
+        // castShadow
         receiveShadow
         geometry={nodes.Object_4.geometry}
         material={materials.MacBookPro}

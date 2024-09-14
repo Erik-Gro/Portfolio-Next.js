@@ -28,8 +28,8 @@ export function ReactLogo({ position = [0,0,0], scale = [1,1,1], ...props }:Thre
     <Float floatIntensity={10} >
     <group position={position} scale={scale} dispose={null}>
       <mesh
-        castShadow
-        receiveShadow
+        // castShadow
+        // receiveShadow
         geometry={nodes['React-Logo_Material002_0'].geometry}
         material={materials['Material.002']}
         position={[0, 0.079, 0.181]}
