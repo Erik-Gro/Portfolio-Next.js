@@ -1,6 +1,9 @@
 import { Main } from "@/sections/main/Main";
 import Navbar from "@/sections/navbar/Navbar";
 import Projects from "@/sections/projects/Projects";
+// import dynamic from "next/dynamic";
+
+// const Projects = dynamic(() => import("@/sections/projects/Projects"), { ssr: false });
 
 export default function Home() {
 

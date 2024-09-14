@@ -15,9 +15,9 @@ const Projects = () => {
   const [direction, setDirection] = useState('');
   const [isClient, setIsClient] = useState(false);
 
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const handleNavigation = (direction: string) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -38,9 +38,9 @@ const Projects = () => {
     reset: true
   });
 
-  // if (!isClient) {
-  //   return null; // Or a loading spinner
-  // }
+  if (!isClient) {
+    return null; // Or a loading spinner
+  }
 
   return (
     <section className="c-space my-20">
