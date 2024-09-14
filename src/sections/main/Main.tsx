@@ -2,11 +2,20 @@
 
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Obj } from './components/Obj';
 import { PerspectiveCamera, Stars } from '@react-three/drei';
 import CanvasLoader from '@/shared/loaders/CanvasLoader';
+import ReactLogo from './components/ReactLogo';
+import useCalculateSizes from './data/Sizes';
+import { useMediaQuery } from 'react-responsive';
 
 export function Main() {
+
+  const isSmall = useMediaQuery({ maxWidth: 440 });
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
+
+  const sizes = useCalculateSizes(isSmall, isMobile, isTablet);
+  
   return (
     <section className="min-h-screen w-full flex flex-col relative" id="home">
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
@@ -35,7 +44,7 @@ export function Main() {
             </HeroCamera> */}
 
             <group>
-              <Obj />
+              <ReactLogo position={sizes.reactLogoPosition}/>
             </group>
 
             <ambientLight intensity={1} color={"white"} />
