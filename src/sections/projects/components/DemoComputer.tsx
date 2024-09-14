@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, memo } from 'react';
 import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Group } from 'three';
@@ -1029,4 +1029,4 @@ const DemoComputer = (props: DemoComputerProps) => {
   );
 };
 
-export default DemoComputer;
+export default memo(DemoComputer);

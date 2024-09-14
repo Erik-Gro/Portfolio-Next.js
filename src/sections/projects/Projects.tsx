@@ -1,6 +1,6 @@
 "use client"; // Ensure this component is client-side only
 
-import { Suspense, useState, useEffect } from 'react';
+import { Suspense, useState, useEffect, memo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import { useTrail, animated } from '@react-spring/web'; 
@@ -117,4 +117,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default memo(Projects);
