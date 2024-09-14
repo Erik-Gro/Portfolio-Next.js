@@ -22,14 +22,15 @@ type GLTFResult = GLTF & {
 }
 
 interface ReactLogoProps {
-  position: [number, number, number]; // Define the type of the position prop
+  position: [number, number, number];
+  scale:[number, number, number]
 }
 
 export function ReactLogo(props:ReactLogoProps ) {
   const { nodes, materials } = useGLTF('/models/react.glb') as GLTFResult
   return (
-    <Float floatIntensity={1}>
-    <group position={props.position} scale={[0.3,0.3,0.3]} dispose={null}>
+    <Float floatIntensity={10} >
+    <group position={props.position} scale={props.scale} dispose={null}>
       <mesh
         castShadow
         receiveShadow

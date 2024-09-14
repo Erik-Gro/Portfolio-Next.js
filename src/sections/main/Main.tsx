@@ -44,7 +44,7 @@ export function Main() {
             </HeroCamera> */}
 
             <group>
-              <ReactLogo position={sizes.reactLogoPosition}/>
+              <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale}/>
             </group>
 
             <ambientLight intensity={1} color={"white"} />
