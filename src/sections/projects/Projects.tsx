@@ -1,6 +1,5 @@
-"use client"; // Ensure this component is client-side only
-
-import { Suspense, useState, useEffect, memo } from 'react';
+"use client"
+import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import { useTrail, animated } from '@react-spring/web'; 
@@ -8,18 +7,14 @@ import { myProjects } from './data';
 import CanvasLoader from '@/shared/loaders/CanvasLoader';
 import DemoComputer from './components/DemoComputer';
 
+
 const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const [direction, setDirection] = useState('');
-  const [isClient, setIsClient] = useState(false);
+  const [direction, setDirection] = useState(''); 
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const handleNavigation = (direction: string) => {
+  const handleNavigation = (direction:string) => {
     setSelectedProjectIndex((prevIndex) => {
       if (direction === 'previous') {
         return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
@@ -31,16 +26,21 @@ const Projects = () => {
 
   const currentProject = myProjects[selectedProjectIndex];
 
-  const trail = useTrail(3, {
+  // Create a trail of animated components with staggered delays
+  const [trail, api] = useTrail(4, () => ({
     opacity: 1,
-    from: { opacity: 0 },
     config: { duration: 1000 },
-    reset: true
-  });
+    from: { opacity: 0 }
+  }));
 
-  if (!isClient) {
-    return null; // Or a loading spinner
-  }
+  useEffect(() => {
+    // Trigger the spring animation whenever the selected project changes
+    api.start({
+      opacity: 1,
+      from: { opacity: 0 },
+      reset: true
+    });
+  }, [selectedProjectIndex, api]);
 
   return (
     <section className="c-space my-20">
@@ -117,4 +117,4 @@ const Projects = () => {
   );
 };
 
-export default memo(Projects);
+export default Projects;
