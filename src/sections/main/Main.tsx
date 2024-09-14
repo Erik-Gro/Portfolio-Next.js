@@ -11,6 +11,7 @@ import Macbook from './components/Macbook';
 import Rotate from '../utils/Rotate';
 import {Room} from './components/Room';
 import { PythonLogo } from './components/PythonLogo';
+import Target from './components/Target';
 
 export function Main() {
 
@@ -51,6 +52,7 @@ export function Main() {
               <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale}/>
               <Macbook position={sizes.macBookPosition}/>
               <PythonLogo  position={sizes.pythonPosition} />
+              <Target position={sizes.targetPosition} />
             </group>
 
             <ambientLight intensity={0.8}  />
