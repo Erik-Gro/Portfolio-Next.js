@@ -12,6 +12,8 @@ import Rotate from '../utils/Rotate';
 import {Room} from './components/Room';
 import { PythonLogo } from './components/PythonLogo';
 import Target from './components/Target';
+import Cube from './components/Cube';
+import Rings from './components/Rings';
 
 export function Main() {
 
@@ -53,6 +55,8 @@ export function Main() {
               <Macbook position={sizes.macBookPosition}/>
               <PythonLogo  position={sizes.pythonPosition} />
               <Target position={sizes.targetPosition} />
+              <Cube position={sizes.cubePosition} />
+              <Rings position={sizes.ringPosition} /> 
             </group>
 
             <ambientLight intensity={0.8}  />

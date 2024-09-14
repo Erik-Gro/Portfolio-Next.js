@@ -24,7 +24,7 @@ export function PythonLogo(props: any) {
   useFrame((state, delta) => {
     if (groupRef.current) {
       // Continuous rotation along X-axis and Y-axis
-      groupRef.current.rotation.x += delta * 0.1; // Slow continuous rotation on X-axis (optional)
+      groupRef.current.rotation.x += delta * 0.5; // Slow continuous rotation on X-axis (optional)
       groupRef.current.rotation.y += delta * 1; // Faster continuous rotation on Y-axis
     }
   });

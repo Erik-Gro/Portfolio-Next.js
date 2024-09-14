@@ -1,4 +1,4 @@
-import { useGLTF } from '@react-three/drei';
+import { Float, useGLTF } from '@react-three/drei';
 import { useRef, useEffect } from 'react';
 import { Mesh } from 'three';
 import { useFrame } from '@react-three/fiber';
@@ -23,9 +23,11 @@ const Target = (props:any) => {
   });
 
   return (
+    <Float>
     <mesh {...props} ref={groupRef} rotation={[0, Math.PI / 5, 0]} scale={1.5}>
       <primitive object={scene} />
     </mesh>
+    </Float>
   );
 };
 
