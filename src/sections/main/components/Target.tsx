@@ -1,5 +1,5 @@
 import { Float, useGLTF } from '@react-three/drei';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, memo } from 'react';
 import { Mesh } from 'three';
 import { useFrame } from '@react-three/fiber';
 
@@ -28,4 +28,4 @@ const Target = (props:any) => {
   );
 };
 
-export default Target;
+export default memo(Target);

@@ -9,12 +9,12 @@ import useCalculateSizes from './data/Sizes';
 import { useMediaQuery } from 'react-responsive';
 import Macbook from './components/Macbook';
 import Rotate from '../utils/Rotate';
-import {Room} from './components/Room';
-import { PythonLogo } from './components/PythonLogo';
 import Target from './components/Target';
 import Cube from './components/Cube';
 import Rings from './components/Rings';
 import Button from '@/shared/components/button.tsx/Button';
+import Room from './components/Room';
+import PythonLogo from './components/PythonLogo';
 
 export function Main() {
 

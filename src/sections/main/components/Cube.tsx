@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
 import { Mesh, MeshStandardMaterial, BufferGeometry, Group } from 'three';
 import { useFrame } from '@react-three/fiber';
@@ -53,4 +53,4 @@ const Cube: React.FC<any> = ({ position = [0, 0, 0], ...props }) => {
 
 useGLTF.preload('models/cube.glb');
 
-export default Cube;
+export default memo(Cube);

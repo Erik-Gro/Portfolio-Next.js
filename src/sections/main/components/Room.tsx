@@ -8,7 +8,7 @@ Title: Low poly living room
 */
 
 import * as THREE from 'three'
-import React, { useRef } from 'react'
+import React, { memo, useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 
@@ -21,7 +21,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Room(props: JSX.IntrinsicElements['group']) {
+ function Room(props: JSX.IntrinsicElements['group']) {
   const { nodes, materials } = useGLTF('/models/low_poly_living_room.glb') as GLTFResult
   return (
     <Float floatIntensity={2}>
@@ -40,3 +40,5 @@ export function Room(props: JSX.IntrinsicElements['group']) {
 }
 
 useGLTF.preload('/models/low_poly_living_room.glb')
+
+export default memo(Room)

@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react';
+import { useRef, useCallback, memo } from 'react';
 import { Center, Float, useTexture } from '@react-three/drei';
 import { useFrame, ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
@@ -46,4 +46,4 @@ const Rings: React.FC<RingsProps> = ({ position=[0,0,0] }) => {
   );
 };
 
-export default Rings;
+export default memo(Rings);

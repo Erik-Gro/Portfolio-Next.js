@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import React, { useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { GLTF } from 'three-stdlib';
@@ -15,7 +15,7 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function PythonLogo(props: any) {
+ function PythonLogo(props: any) {
   const { nodes, materials } = useGLTF('/models/python.glb') as GLTFResult;
 
   const groupRef = useRef<THREE.Group>(null);
@@ -52,3 +52,5 @@ export function PythonLogo(props: any) {
 }
 
 useGLTF.preload('/models/python.glb');
+
+export default memo(PythonLogo)
