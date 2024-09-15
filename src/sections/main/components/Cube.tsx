@@ -20,10 +20,8 @@ const Cube: React.FC<any> = ({ position = [0, 0, 0], ...props }) => {
   useFrame((state, delta) => {
     if (groupRef.current) {
       const elapsedTime = state.clock.getElapsedTime();
-      const scaleAmplitude = 0.5; // Scale change amplitude
-      const frequency = 2; // Pulses per second
+      const scaleAmplitude = 0.5; 
   
-      // Pulsing effect
       const scale = scaleAmplitude * Math.sin( elapsedTime);
       groupRef.current.scale.set(scale, scale, scale);
     }

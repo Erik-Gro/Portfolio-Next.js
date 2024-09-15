@@ -3,7 +3,6 @@ import { useRef, useEffect } from 'react';
 import { Mesh } from 'three';
 import { useFrame } from '@react-three/fiber';
 
-// Define the Target component
 // TODO: make all floating components reusable through target
 const Target = (props:any) => {
   const groupRef = useRef<Mesh>(null!);
@@ -14,10 +13,8 @@ const Target = (props:any) => {
   useFrame((state, delta) => {
     if (groupRef.current) {
       const elapsedTime = state.clock.getElapsedTime();
-      const amplitude = 0.01; // Maximum distance from the center
-      const frequency = 1; // Number of bounces per second
-  
-      // Sinusoidal movement for bouncing
+      const amplitude = 0.01; 
+      
       groupRef.current.position.y += amplitude * Math.sin(elapsedTime);
     }
   });

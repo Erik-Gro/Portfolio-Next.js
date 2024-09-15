@@ -18,14 +18,12 @@ type GLTFResult = GLTF & {
 export function PythonLogo(props: any) {
   const { nodes, materials } = useGLTF('/models/python.glb') as GLTFResult;
 
-  // Create a reference to the group
   const groupRef = useRef<THREE.Group>(null);
 
   useFrame((state, delta) => {
     if (groupRef.current) {
-      // Continuous rotation along X-axis and Y-axis
-      groupRef.current.rotation.x += delta * 0.5; // Slow continuous rotation on X-axis (optional)
-      groupRef.current.rotation.y += delta * 1; // Faster continuous rotation on Y-axis
+      groupRef.current.rotation.x += delta * 0.5;
+      groupRef.current.rotation.y += delta * 1;
     }
   });
 
@@ -37,7 +35,7 @@ export function PythonLogo(props: any) {
         geometry={nodes.Object_4.geometry}
         material={materials.material}
         position={[-0.002, 0, 0]}
-        rotation={[Math.PI / 2, 0, 0]} // Base rotation
+        rotation={[Math.PI / 2, 0, 0]}
         scale={2.501}
       />
       <mesh
@@ -46,7 +44,7 @@ export function PythonLogo(props: any) {
         geometry={nodes.Object_6.geometry}
         material={materials['.001']}
         position={[-0.002, 0, 0]}
-        rotation={[-Math.PI / 2, 0, -Math.PI]} // Base rotation
+        rotation={[-Math.PI / 2, 0, -Math.PI]} 
         scale={2.501}
       />
     </group>

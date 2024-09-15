@@ -17,10 +17,8 @@ const Rings: React.FC<RingsProps> = ({ position=[0,0,0] }) => {
     }
   }, []);
 
-  // Load texture
   const texture = useTexture('textures/rings.png');
 
-  // UseFrame for animation
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
     
@@ -28,7 +26,6 @@ const Rings: React.FC<RingsProps> = ({ position=[0,0,0] }) => {
       // Set position based on props
     //   r.position.set(position[0], position[1], position[2]);
 
-      // Staggered rotation
       const speed = 0.5 + index * 0.1;
       r.rotation.x = elapsedTime * speed;
       r.rotation.y = elapsedTime * speed;

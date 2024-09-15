@@ -27,22 +27,17 @@ type GLTFResult = GLTF & {
  function Macbook({ position = [0,0,0], scale = [1,1,1], ...props }:ThreeObjectProps) {
   const { nodes, materials } = useGLTF('/models/Macbook.glb') as GLTFResult;
   
-  // Create a reference to the model's group
   const groupRef = useRef<THREE.Group>(null);
   
-  // Use frame loop to animate the object
   useFrame(({ clock }, delta) => {
     const elapsedTime = clock.getElapsedTime();
 
     if (groupRef.current) {
-      // Create a floating effect using sin function
-      groupRef.current.position.y = Math.sin(elapsedTime * 2) * 0.1; // Float up and down
+      groupRef.current.position.y = Math.sin(elapsedTime * 2) * 0.1;
 
-      // Continuous rotation along Y-axis and slight rotation on X-axis
-      groupRef.current.rotation.y += delta * 0.5; // Smooth Y-axis rotation
-      groupRef.current.rotation.x = Math.cos(elapsedTime) * 0.1; // Sway effect on X-axis
+      groupRef.current.rotation.y += delta * 0.5;
+      groupRef.current.rotation.x = Math.cos(elapsedTime) * 0.1;
 
-      // Create a wobble effect by scaling the object
       const scaleFactor = 1 + Math.sin(elapsedTime * 3) * 0.05;
       groupRef.current.scale.set(scaleFactor, scaleFactor, scaleFactor);
     }
