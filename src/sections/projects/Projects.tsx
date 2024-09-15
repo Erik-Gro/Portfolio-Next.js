@@ -26,7 +26,7 @@ const Projects = () => {
 
   const currentProject = myProjects[selectedProjectIndex];
 
-  // Create a trail of animated components with staggered delays
+
   const [trail, api] = useTrail(3, () => ({
     opacity: 1,
     config: { duration: 1000 },
@@ -34,7 +34,6 @@ const Projects = () => {
   }));
 
   useEffect(() => {
-    // Trigger the spring animation whenever the selected project changes
     api.start({
       opacity: 1,
       from: { opacity: 0 },

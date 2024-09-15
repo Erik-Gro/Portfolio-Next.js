@@ -15,8 +15,6 @@ const DemoComputer = (props: DemoComputerProps) => {
 
   const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
 
-  // const [targetRotationY, setTargetRotationY] = useState(0);
-
   useEffect(() => {
     if (txt) {
       txt.flipY = false;
@@ -30,16 +28,12 @@ const DemoComputer = (props: DemoComputerProps) => {
       } else {
         group.current.rotation.y = 2;
       }
-
-      // Set the target rotation to 0 for the animation
-      // setTargetRotationY(0);
     }
   }, [txt, props.direction]);
 
   useFrame((state, delta) => {
     if (group.current) {
-      const rotationSpeed = 3; 
-      group.current.rotation.y += (0 - group.current.rotation.y) * rotationSpeed * delta;
+      group.current.rotation.y += (0 - group.current.rotation.y) * 3 * delta;
     }
   });
 
