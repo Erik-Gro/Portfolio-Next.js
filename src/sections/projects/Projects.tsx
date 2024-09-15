@@ -27,7 +27,7 @@ const Projects = () => {
   const currentProject = myProjects[selectedProjectIndex];
 
   // Create a trail of animated components with staggered delays
-  const [trail, api] = useTrail(4, () => ({
+  const [trail, api] = useTrail(3, () => ({
     opacity: 1,
     config: { duration: 1000 },
     from: { opacity: 0 }
@@ -70,7 +70,6 @@ const Projects = () => {
                 </div>
               ))}
             </div>
-
             <a
               className="flex items-center gap-2 cursor-pointer text-white-600"
               href={currentProject.href}
