@@ -3,7 +3,7 @@ import { Suspense, memo, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import { useTrail, animated } from '@react-spring/web'; 
-import { myProjects } from './data';
+import { myProjects } from './vars/data';
 import CanvasLoader from '@/shared/loaders/CanvasLoader';
 import DemoComputer from './components/DemoComputer';
 
