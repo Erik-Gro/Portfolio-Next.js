@@ -9,14 +9,13 @@ interface DemoComputerProps {
 }
 
 const DemoComputer = (props: DemoComputerProps) => {
-  const group = useRef<Group>(null);  // Explicitly type the ref as a THREE.Group
-  const { nodes, materials, animations } = useGLTF('/models/computer.glb') as any;  // Type `any` to avoid Object3D errors
+  const group = useRef<Group>(null);  
+  const { nodes, materials, animations } = useGLTF('/models/computer.glb') as any;  //remove any
   const { actions } = useAnimations(animations, group);
 
   const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
 
-  // State to track animation progress
-  const [targetRotationY, setTargetRotationY] = useState(0);
+  // const [targetRotationY, setTargetRotationY] = useState(0);
 
   useEffect(() => {
     if (txt) {
@@ -34,15 +33,14 @@ const DemoComputer = (props: DemoComputerProps) => {
       }
 
       // Set the target rotation to 0 for the animation
-      setTargetRotationY(0);
+      // setTargetRotationY(0);
     }
   }, [txt, props.direction]);
 
   useFrame((state, delta) => {
     if (group.current) {
-      // Gradually interpolate the current rotation to the target rotation
-      const rotationSpeed = 3; // Adjust speed factor (higher is faster)
-      group.current.rotation.y += (targetRotationY - group.current.rotation.y) * rotationSpeed * delta;
+      const rotationSpeed = 3; 
+      group.current.rotation.y += (0 - group.current.rotation.y) * rotationSpeed * delta;
     }
   });
 
@@ -67,7 +65,7 @@ const DemoComputer = (props: DemoComputerProps) => {
             rotation={[Math.PI / 2, 0, 0]}
             scale={[0.923, 0.855, 0.855]}
           />
-          <group
+          {/* <group
             name="Screen002"
             position={[5.658, 1.644, 0.812]}
             rotation={[Math.PI / 2, 0, 0]}
@@ -960,8 +958,8 @@ const DemoComputer = (props: DemoComputerProps) => {
             position={[15.155, -3.47, -14.495]}
             rotation={[Math.PI / 2, 0, 0]}
             scale={0.963}
-          />
-        </group>
+          />*/}
+        </group> 
         <group
           name="Monitor-B-_computer_0"
           position={[0.266, 1.132, 0.051]}
