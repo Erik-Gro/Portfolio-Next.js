@@ -25,7 +25,6 @@ const DemoComputer = (props: DemoComputerProps) => {
 
   useEffect(() => {
     if (group.current) {
-      // Set initial rotation based on direction
       if (props.direction === 'previous') {
         group.current.rotation.y = -2;
       } else {
