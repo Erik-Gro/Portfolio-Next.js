@@ -29,7 +29,7 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
             gamePath = '/games/ttfe/game.html';
             break;
           case 3:
-            gamePath = '/games/minesweeper/game.html';
+            gamePath = '/games/mineSweeper/game.html';
             break;
           default:
             gamePath = '/games/tetris/game.html';
