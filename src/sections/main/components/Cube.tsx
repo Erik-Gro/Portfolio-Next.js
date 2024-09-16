@@ -1,17 +1,21 @@
 import { memo, useEffect, useRef, useState } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
-import { Mesh, MeshStandardMaterial, BufferGeometry, Group } from 'three';
+import { Mesh, MeshStandardMaterial, BufferGeometry, Group, Texture } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { ThreeObjectProps } from '../types/shared';
+import { GLTF } from 'three-stdlib';
 
+type GLTFResult = GLTF & {
+  nodes: {
+    Cube: Mesh
+  }
+  materials: {}
+}
 
 const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0], ...props }) => {
-  const { nodes } = useGLTF('models/cube.glb');
+  const { nodes } = useGLTF('models/cube.glb') as GLTFResult; 
   const texture = useTexture('textures/cube.png');
 
-  const cubeRef = useRef<Mesh>(null!);
-  const [hovered, setHovered] = useState(false);
-  const originalRotation = useRef<[number, number, number]>([0, 0, 0]);
   const groupRef = useRef<Group>(null);
 
   useFrame((state, delta) => {
@@ -27,22 +31,13 @@ const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0], ...props }) =>
 
   return (
     <Float floatIntensity={2}>
-      <group ref={groupRef} position={position} rotation={[0, 0, 0]} scale={100} dispose={null} {...props}>
-        {nodes.Cube && ('geometry' in nodes.Cube) && ('material' in nodes.Cube) && (
+      <group ref={groupRef} position={position} rotation={[0, 0, 0]} scale={100} dispose={null}>
           <mesh
-            ref={cubeRef}
             castShadow
             receiveShadow
-            geometry={(nodes.Cube as CubeNode).geometry}
-            material={(nodes.Cube as CubeNode).material}
-            onPointerEnter={() => {
-              setHovered(true);
-              originalRotation.current = [cubeRef.current.rotation.x, cubeRef.current.rotation.y, cubeRef.current.rotation.z];
-            }}
-            onPointerLeave={() => setHovered(false)}>
+            geometry={nodes.Cube.geometry}>
             <meshMatcapMaterial matcap={texture} toneMapped={false} />
           </mesh>
-        )}
       </group>
     </Float>
   );
