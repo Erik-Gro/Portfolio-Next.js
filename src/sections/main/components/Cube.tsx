@@ -33,8 +33,8 @@ const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0], ...props }) =>
     <Float floatIntensity={2}>
       <group ref={groupRef} position={position} dispose={null}>
           <mesh
-            castShadow
-            receiveShadow
+            // castShadow
+            // receiveShadow
             geometry={nodes.Cube.geometry}>
             <meshMatcapMaterial matcap={texture} toneMapped={false} />
           </mesh>

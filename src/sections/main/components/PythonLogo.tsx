@@ -31,7 +31,7 @@ const PythonLogo: React.FC<ThreeObjectProps> = ({ ...props }) => {
   return (
     <group ref={groupRef} {...props} dispose={null}>
       <mesh
-        castShadow
+        // castShadow
         receiveShadow
         geometry={nodes.Object_4.geometry}
         material={materials.material}
@@ -40,7 +40,7 @@ const PythonLogo: React.FC<ThreeObjectProps> = ({ ...props }) => {
         scale={2.501}
       />
       <mesh
-        castShadow
+        // castShadow
         receiveShadow
         geometry={nodes.Object_6.geometry}
         material={materials['.001']}
