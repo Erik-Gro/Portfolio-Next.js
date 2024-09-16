@@ -2,8 +2,11 @@
 
 import { useState, useCallback } from 'react';
 import NavbarItems from './navbarItems/NavbarItems';
-import GameModal from './game/gameModal';
-import Image from 'next/image'; 
+// import GameModal from './game/gameModal';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const GameModal = dynamic(() => import('./game/gameModal'), { ssr: false });
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
