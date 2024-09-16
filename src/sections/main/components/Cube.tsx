@@ -31,7 +31,7 @@ const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0], ...props }) =>
 
   return (
     <Float floatIntensity={2}>
-      <group ref={groupRef} position={position} rotation={[0, 0, 0]} scale={100} dispose={null}>
+      <group ref={groupRef} position={position} dispose={null}>
           <mesh
             castShadow
             receiveShadow
