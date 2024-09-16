@@ -37,7 +37,6 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
 
         iframeRef.current.src = gamePath;
 
-        // Focus the iframe itself when the iframe content is loaded
         iframeRef.current.onload = () => {
           iframeRef.current?.focus();
         };
@@ -75,7 +74,6 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
           ref={iframeRef}
           title="Game"
           className="w-[90vw] h-[90vw] max-w-[41rem] max-h-[41rem] sm:w-[40rem] sm:h-[40rem] lg:w-[50rem] lg:h-[50rem] border-none block mx-auto"
-          tabIndex={-1} // Allow the iframe to be focusable
         ></iframe>
       </div>
     </div>
