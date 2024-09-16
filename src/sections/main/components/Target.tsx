@@ -2,9 +2,10 @@ import { Float, useGLTF } from '@react-three/drei';
 import { useRef, useEffect, memo } from 'react';
 import { Mesh } from 'three';
 import { useFrame } from '@react-three/fiber';
+import { ThreeObjectProps } from '../types/shared';
 
 // TODO: make all floating components reusable through target
-const Target = (props:any) => {
+const Target: React.FC<ThreeObjectProps> = ({...props}) => {
   const groupRef = useRef<Mesh>(null!);
   const { scene } = useGLTF(
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf',

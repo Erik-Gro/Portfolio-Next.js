@@ -23,8 +23,7 @@ type GLTFResult = GLTF & {
     MacBookPro: THREE.MeshStandardMaterial
   }
 }
-
- function Macbook({ position = [0,0,0], scale = [1,1,1], ...props }:ThreeObjectProps) {
+const Macbook: React.FC<ThreeObjectProps> = ({ position = [0,0,0], scale = [1,1,1], ...props }) => {
   const { nodes, materials } = useGLTF('/models/Macbook.glb') as GLTFResult;
   
   const groupRef = useRef<THREE.Group>(null);

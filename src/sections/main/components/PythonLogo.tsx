@@ -3,6 +3,7 @@ import React, { memo, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { GLTF } from 'three-stdlib';
+import { ThreeObjectProps } from '../types/shared';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -15,7 +16,7 @@ type GLTFResult = GLTF & {
   };
 };
 
- function PythonLogo(props: any) {
+const PythonLogo: React.FC<ThreeObjectProps> = ({ ...props }) => {
   const { nodes, materials } = useGLTF('/models/python.glb') as GLTFResult;
 
   const groupRef = useRef<THREE.Group>(null);

@@ -2,13 +2,10 @@ import { memo, useEffect, useRef, useState } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
 import { Mesh, MeshStandardMaterial, BufferGeometry, Group } from 'three';
 import { useFrame } from '@react-three/fiber';
+import { ThreeObjectProps } from '../types/shared';
 
-interface CubeNode {
-  geometry: BufferGeometry;
-  material: MeshStandardMaterial;
-}
 
-const Cube: React.FC<any> = ({ position = [0, 0, 0], ...props }) => {
+const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0], ...props }) => {
   const { nodes } = useGLTF('models/cube.glb');
   const texture = useTexture('textures/cube.png');
 

@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function ReactLogo({ position = [0,0,0], scale = [1,1,1], ...props }:ThreeObjectProps) {
+export const ReactLogo: React.FC<ThreeObjectProps> = ({ position = [0,0,0], scale = [1,1,1], ...props }) => {
   const { nodes, materials } = useGLTF('/models/react.glb') as GLTFResult
   return (
     <Float floatIntensity={10} >

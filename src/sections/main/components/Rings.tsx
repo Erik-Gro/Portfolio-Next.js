@@ -2,12 +2,9 @@ import { useRef, useCallback, memo } from 'react';
 import { Center, Float, useTexture } from '@react-three/drei';
 import { useFrame, ThreeEvent } from '@react-three/fiber';
 import * as THREE from 'three';
+import { ThreeObjectProps } from '../types/shared';
 
-interface RingsProps {
-  position: [number, number, number];
-}
-
-const Rings: React.FC<RingsProps> = ({ position=[0,0,0] }) => {
+const Rings: React.FC<ThreeObjectProps> = ({ position=[0,0,0] }) => {
   const refList = useRef<THREE.Mesh[]>([]);
   
   // Callback to add meshes to refList

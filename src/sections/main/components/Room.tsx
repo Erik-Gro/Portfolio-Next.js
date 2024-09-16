@@ -11,6 +11,7 @@ import * as THREE from 'three'
 import React, { memo, useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
+import { ThreeObjectProps } from '../types/shared'
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -21,7 +22,7 @@ type GLTFResult = GLTF & {
   }
 }
 
- function Room(props: JSX.IntrinsicElements['group']) {
+const Room: React.FC<ThreeObjectProps> = ({...props}) => {
   const { nodes, materials } = useGLTF('/models/low_poly_living_room.glb') as GLTFResult
   return (
     <Float floatIntensity={2}>
