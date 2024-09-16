@@ -61,7 +61,7 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="relative bg-white rounded-lg shadow-lg"
+        className="relative bg-black rounded-lg shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <button
