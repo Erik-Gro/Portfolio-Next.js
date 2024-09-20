@@ -6,6 +6,7 @@ import { NavLink, NavbarItemsProps } from "./types";
 
 const NavbarItems: React.FC<NavbarItemsProps> = ({ onClick, onPlayGameClick }) => {
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   const navItems = useMemo(() => (
     <>
       {navbarLinks.map((item: NavLink) => (
@@ -27,6 +28,7 @@ const NavbarItems: React.FC<NavbarItemsProps> = ({ onClick, onPlayGameClick }) =
         </button>
       </li>
     </>
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   ), []);
 
   return (

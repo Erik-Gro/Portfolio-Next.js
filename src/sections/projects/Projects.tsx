@@ -32,6 +32,7 @@ const Projects = () => {
     from: { opacity: 0 }
   }));
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     api.start({
       opacity: 1,
@@ -39,6 +40,7 @@ const Projects = () => {
       reset: true
     });
   }, [selectedProjectIndex]);
+  /* eslint-enable react-hooks/exhaustive-deps */
 
   return (
     <section className="c-space my-20">
