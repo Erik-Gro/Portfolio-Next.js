@@ -1,17 +1,42 @@
-import { useRef, useEffect, useState, memo } from 'react';
-import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
+import { useRef, useEffect, memo } from 'react';
+import { useGLTF, useVideoTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { Group } from 'three';
+import { Group, Mesh, MeshStandardMaterial } from 'three';
+import { GLTF } from 'three-stdlib';
 
 interface DemoComputerProps {
   texture?: string;
   direction?: string;
 }
 
+type GLTFResult = GLTF & {
+  nodes: {
+    ['monitor-screen']: Mesh
+    ['Monitor-B-_computer_0_1']: Mesh
+    ['Monitor-B-_computer_0_2']: Mesh
+    ['Monitor-B-_computer_0_3']: Mesh
+    ['Monitor-B-_computer_0_4']: Mesh
+    ['Monitor-B-_computer_0_5']: Mesh
+    ['Monitor-B-_computer_0_6']: Mesh
+    ['Monitor-B-_computer_0_7']: Mesh
+    ['Monitor-B-_computer_0_8']: Mesh
+  }
+  materials: {
+    computer: MeshStandardMaterial
+    base__0: MeshStandardMaterial
+    Material_36: MeshStandardMaterial
+    Material_35: MeshStandardMaterial
+    Material_34: MeshStandardMaterial
+    keys: MeshStandardMaterial
+    keys2: MeshStandardMaterial
+    Material_37: MeshStandardMaterial
+  }
+}
+
+
 const DemoComputer = (props: DemoComputerProps) => {
   const group = useRef<Group>(null);  
-  const { nodes, materials, animations } = useGLTF('/models/computer.glb') as any;  //remove any
-  const { actions } = useAnimations(animations, group);
+  const { nodes, materials } = useGLTF('/models/computer.glb') as GLTFResult;  //remove any
 
   const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
 
