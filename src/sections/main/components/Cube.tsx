@@ -9,7 +9,7 @@ type GLTFResult = GLTF & {
   nodes: {
     Cube: Mesh
   }
-  materials: {}
+  materials: Record<string, unknown>;
 }
 
 const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0] }) => {
