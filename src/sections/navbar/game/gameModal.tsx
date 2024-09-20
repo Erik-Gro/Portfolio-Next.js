@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useEffect, useRef } from 'react';
 
@@ -11,10 +11,12 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
   const iframeRef = useRef<HTMLIFrameElement | null>(null);
 
   useEffect(() => {
+    const iframe = iframeRef.current;  
+    
     if (isOpen) {
       document.body.classList.add('no-scroll');
 
-      if (iframeRef.current) {
+      if (iframe) {
         const randomGame = Math.floor(Math.random() * 4);
 
         let gamePath = '';
@@ -35,10 +37,10 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
             gamePath = '/games/tetris/game.html';
         }
 
-        iframeRef.current.src = gamePath;
+        iframe.src = gamePath;
 
-        iframeRef.current.onload = () => {
-          iframeRef.current?.focus();
+        iframe.onload = () => {
+          iframe?.focus();
         };
       }
     } else {
@@ -46,8 +48,8 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
     }
 
     return () => {
-      if (iframeRef.current) {
-        iframeRef.current.src = '';
+      if (iframe) {
+        iframe.src = '';  
       }
       document.body.classList.remove('no-scroll');
     };
