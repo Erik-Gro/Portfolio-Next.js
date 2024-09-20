@@ -351,37 +351,65 @@ function movedown(board) {
     }
   }
 }
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+window.addEventListener("touchstart", (e) => {
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+});
+
+window.addEventListener("touchend", (e) => {
+  const touchEndX = e.changedTouches[0].clientX;
+  const touchEndY = e.changedTouches[0].clientY;
+
+  const deltaX = touchEndX - touchStartX;
+  const deltaY = touchEndY - touchStartY;
+
+  const absDeltaX = Math.abs(deltaX);
+  const absDeltaY = Math.abs(deltaY);
+
+  if (absDeltaX > absDeltaY) {
+    if (deltaX > 0) {
+      moveright(board);
+    } else {
+      moveLeft(board);
+    }
+  } else {
+    if (deltaY > 0) {
+      movedown(board);
+    } else {
+      moveup(board);
+    }
+  }
+
+  if (boardchanged === true) {
+    boardchanged = false;
+    createTile(randomNumber(), randomXY(), randomXY());
+  }
+});
+
 window.addEventListener("keyup", (e) => {
   switch (e.key) {
     case "ArrowLeft":
       moveLeft(board);
-      if (boardchanged === true) {
-        boardchanged = false;
-        createTile(randomNumber(), randomXY(), randomXY());
-      }
       break;
     case "ArrowRight":
       moveright(board);
-      if (boardchanged === true) {
-        boardchanged = false;
-        createTile(randomNumber(), randomXY(), randomXY());
-      }
       break;
     case "ArrowUp":
       moveup(board);
-      if (boardchanged === true) {
-        boardchanged = false;
-        createTile(randomNumber(), randomXY(), randomXY());
-      }
       break;
     case "ArrowDown":
       movedown(board);
-      if (boardchanged === true) {
-        boardchanged = false;
-        createTile(randomNumber(), randomXY(), randomXY());
-      }
       break;
     default:
       break;
+  }
+
+  if (boardchanged === true) {
+    boardchanged = false;
+    createTile(randomNumber(), randomXY(), randomXY());
   }
 });
