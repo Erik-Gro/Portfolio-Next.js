@@ -1,9 +1,0 @@
-{
-    "redirects": [
-      {
-        "source": "/",
-        "destination": "https://erikgroportfolio.vercel.app/",
-        "permanent": true
-      }
-    ]
-  }
