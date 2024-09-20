@@ -42,7 +42,7 @@ export const myProjects = [
       subdesc:
         'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.',
       href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-      texture: '/textures/project/Wiki.move',
+      texture: '/textures/project/Wiki.mov',
       logo: '/assets/project-logo2.png',
       logoStyle: {
         backgroundColor: '#13202F',
