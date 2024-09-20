@@ -36,7 +36,7 @@ type GLTFResult = GLTF & {
 
 const DemoComputer = (props: DemoComputerProps) => {
   const group = useRef<Group>(null);  
-  const { nodes, materials } = useGLTF('/models/computer.glb') as GLTFResult;  //remove any
+  const { nodes, materials } = useGLTF('/models/computer.glb') as GLTFResult;  
 
   const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
 
