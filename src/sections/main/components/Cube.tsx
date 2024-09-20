@@ -1,6 +1,6 @@
-import { memo, useEffect, useRef, useState } from 'react';
+import { memo, useRef, } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
-import { Mesh, MeshStandardMaterial, BufferGeometry, Group, Texture } from 'three';
+import { Mesh, Group, } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { ThreeObjectProps } from '../types/shared';
 import { GLTF } from 'three-stdlib';
@@ -12,13 +12,13 @@ type GLTFResult = GLTF & {
   materials: {}
 }
 
-const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0], ...props }) => {
+const Cube: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0] }) => {
   const { nodes } = useGLTF('models/cube.glb') as GLTFResult; 
   const texture = useTexture('textures/cube.png');
 
   const groupRef = useRef<Group>(null);
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (groupRef.current) {
       const elapsedTime = state.clock.getElapsedTime();
       const scaleAmplitude = 0.5; 
