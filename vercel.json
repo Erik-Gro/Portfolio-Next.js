@@ -1,21 +1,9 @@
 {
-    "version": 2,
-    "routes": [
-      {
-        "src": "^https?://www\\.(.*)",
-        "status": 301,
-        "headers": {
-          "Location": "https://${1}"
-        }
-      }
-    ],
     "redirects": [
       {
         "source": "/",
-        "destination": "https://erikgroportfolio.vercel.app/",
+        "destination": "https://yourdomain.com",
         "permanent": true
       }
-    ],
-    "cleanUrls": true,
-    "trailingSlash": false
+    ]
   }
