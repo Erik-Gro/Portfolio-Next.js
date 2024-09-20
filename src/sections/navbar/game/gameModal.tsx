@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface GameModalProps {
   isOpen: boolean;
@@ -70,7 +71,7 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
           className="absolute right-0 text-gray-500 hover:text-gray-800"
           onClick={onClose}
         >
-          <img src="assets/close.svg" alt="close" className="w-6 h-6" />
+          <Image src="/assets/close.svg" alt="close" width={24} height={24} />
         </button>
         <iframe
           ref={iframeRef}
