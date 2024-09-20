@@ -8,7 +8,7 @@ Title: React logo
 */
 
 import * as THREE from 'three'
-import React, { memo, useRef } from 'react'
+import React, { memo } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { ThreeObjectProps } from '../types/shared'
@@ -22,7 +22,7 @@ type GLTFResult = GLTF & {
   }
 }
 
-export const ReactLogo: React.FC<ThreeObjectProps> = ({ position = [0,0,0], scale = [1,1,1], ...props }) => {
+export const ReactLogo: React.FC<ThreeObjectProps> = ({ position = [0,0,0], scale = [1,1,1] }) => {
   const { nodes, materials } = useGLTF('/models/react.glb') as GLTFResult
   return (
     <Float floatIntensity={10} >

@@ -1,5 +1,5 @@
 import { Float, useGLTF } from '@react-three/drei';
-import { useRef, useEffect, memo } from 'react';
+import { useRef, memo } from 'react';
 import { Mesh } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { ThreeObjectProps } from '../types/shared';
@@ -11,7 +11,7 @@ const Target: React.FC<ThreeObjectProps> = ({...props}) => {
     'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf',
   );
 
-  useFrame((state, delta) => {
+  useFrame((state) => {
     if (groupRef.current) {
       const elapsedTime = state.clock.getElapsedTime();
       const amplitude = 0.01; 

@@ -1,6 +1,6 @@
 import { useRef, useCallback, memo } from 'react';
-import { Center, Float, useTexture } from '@react-three/drei';
-import { useFrame, ThreeEvent } from '@react-three/fiber';
+import { Float, useTexture } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { ThreeObjectProps } from '../types/shared';
 

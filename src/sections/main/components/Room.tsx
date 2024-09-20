@@ -8,7 +8,7 @@ Title: Low poly living room
 */
 
 import * as THREE from 'three'
-import React, { memo, useRef } from 'react'
+import React, { memo } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 import { GLTF } from 'three-stdlib'
 import { ThreeObjectProps } from '../types/shared'
