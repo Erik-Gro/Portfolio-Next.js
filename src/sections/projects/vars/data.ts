@@ -4,7 +4,7 @@ export const myProjects = [
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget diam et libero facilisis viverra. Fusce vel varius libero, sit amet cursus risus.',
       subdesc:
         'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.',
-      href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+      href: 'https://github.com/ericgro2000',
       texture: '/textures/project/test.mov',
       logo: '/assets/project-logo1.png',
       logoStyle: {
@@ -41,7 +41,7 @@ export const myProjects = [
       desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget diam et libero facilisis viverra. Fusce vel varius libero, sit amet cursus risus.',
       subdesc:
         'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.',
-      href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+      href: 'https://github.com/ericgro2000',
       texture: '/textures/project/Wiki.mov',
       logo: '/assets/project-logo2.png',
       logoStyle: {

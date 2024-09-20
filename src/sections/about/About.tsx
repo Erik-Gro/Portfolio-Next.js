@@ -36,7 +36,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I’m Eric Gro</p>
               <p className="grid-subtext">
-                I love to build responsive and great-looking UIs as well as build scalable and secure backends.
+              Hi, I’m Eric Gro. I’m passionate about crafting responsive, visually appealing UIs and developing secure, scalable backends.
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications.
+              I specialize in a diverse range of languages and frameworks, with a primary focus on JavaScript, Python, and C#. I excel in utilizing these technologies to create robust and scalable applications
               </p>
             </div>
           </div>
@@ -94,7 +94,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
-                I love solving problems and building things through code. Programming isn&apos;t just my profession—it&apos;s my passion. I enjoy exploring new technologies, and enhancing my skills.
+              I thrive on solving challenges and creating innovative solutions through code. Programming is not just my career; it’s my true passion. I actively explore new technologies to continually enhance my skills
               </p>
             </div>
           </div>
