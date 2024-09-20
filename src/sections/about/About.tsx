@@ -32,7 +32,6 @@ const About = () => {
               className="w-full sm:h-[276px] h-fit object-contain"
               width={500} 
               height={276} 
-              priority 
             />
             <div>
               <p className="grid-headtext">Hi, I’m Eric Gro</p>
@@ -51,7 +50,6 @@ const About = () => {
               className="w-full sm:h-[276px] h-fit object-contain"
               width={500}
               height={276}
-              priority
             />
             <div>
               <p className="grid-headtext">Tech Stack</p>
@@ -92,7 +90,6 @@ const About = () => {
               className="w-full sm:h-[266px] h-fit object-contain"
               width={500}
               height={266}
-              priority
             />
             <div>
               <p className="grid-headtext">My Passion for Coding</p>
@@ -111,7 +108,6 @@ const About = () => {
               className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
               width={500}
               height={276}
-              priority
             />
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact me</p>
