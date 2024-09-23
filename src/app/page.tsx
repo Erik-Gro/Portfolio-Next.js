@@ -1,4 +1,5 @@
 import About from "@/sections/about/About";
+import Footer from "@/sections/footer/Footer";
 import { Main } from "@/sections/main/Main";
 import Navbar from "@/sections/navbar/Navbar";
 import Projects from "@/sections/projects/Projects";
@@ -14,6 +15,7 @@ export default function Home() {
       <Main />
       <About />
       <Projects />
+      <Footer/>
     </main>
   );
 }

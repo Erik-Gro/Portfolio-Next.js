@@ -1,4 +1,5 @@
-export const navbarLinks = [
+
+export const Links = [
     {
       id: 1,
       name: 'Home',
@@ -14,9 +15,9 @@ export const navbarLinks = [
       name: 'Work',
       href: '#work',
     },
-    {
-      id: 4,
-      name: 'Contact',
-      href: '#contact',
-    },
+    // {
+    //   id: 4,
+    //   name: 'Contact',
+    //   href: '#contact',
+    // },
   ];

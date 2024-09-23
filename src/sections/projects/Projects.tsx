@@ -43,7 +43,7 @@ const Projects = () => {
   /* eslint-enable react-hooks/exhaustive-deps */
 
   return (
-    <section className="c-space my-20">
+    <section className="c-space my-20" id="work">
       <p className="head-text">My Selected Work
       <span style={{ display: 'inline-block', transform: 'rotate(-5deg)', color: 'white' }}>
         (Unfinished)

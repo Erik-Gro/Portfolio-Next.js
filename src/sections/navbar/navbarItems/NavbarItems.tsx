@@ -1,15 +1,16 @@
 "use client";
 
 import { memo, useMemo } from 'react';
-import { navbarLinks } from "./data";
-import { NavLink, NavbarItemsProps } from "./types";
+import {  NavbarItemsProps } from "./types";
+import { Links } from '@/shared/data/links/links';
+import { hrefLink } from '@/shared/data/links/types';
 
 const NavbarItems: React.FC<NavbarItemsProps> = ({ onClick, onPlayGameClick }) => {
 
   /* eslint-disable react-hooks/exhaustive-deps */
   const navItems = useMemo(() => (
     <>
-      {navbarLinks.map((item: NavLink) => (
+      {Links.map((item: hrefLink) => (
         <li key={item.id} className="nav-li" onClick={onClick}>
           <a
             href={item.href}
