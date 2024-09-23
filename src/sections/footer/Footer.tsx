@@ -1,5 +1,6 @@
 import { Links } from "@/shared/data/links/links";
 import { hrefLink } from "@/shared/data/links/types";
+import Image from "next/image"; 
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         <nav className="flex gap-6 mb-4">
           <ul className="nav-ul">
             {Links.map((item: hrefLink) => {
-              if (item.id === 3) return null;  // Skip if id is 3
+              if (item.id === 3) return null;  
               return (
                 <li key={item.id} className="nav-li">
                   <a href={item.href} className="nav-li_a">
@@ -21,28 +22,38 @@ const Footer = () => {
         </nav>
 
         <div className="flex gap-5">
-        <a
-    href="https://codepen.io/EricGro2000"
-    className="social-icon"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src="/assets/codepen.png" alt="Codepen" className="w-6 h-6" />
-  </a>
-  <a
-    href="https://github.com/ericgro2000"
-    className="social-icon"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src="/assets/github.png" alt="Github" className="w-6 h-6" />
-  </a>
+          <a
+            href="https://codepen.io/EricGro2000"
+            className="social-icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/assets/codepen.png"
+              alt="Codepen"
+              width={24} 
+              height={24} 
+            />
+          </a>
+          <a
+            href="https://github.com/ericgro2000"
+            className="social-icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/assets/github.png"
+              alt="Github"
+              width={24} 
+              height={24} 
+            />
+          </a>
         </div>
         <p className="text-white-500 text-sm mt-4">
-            © {new Date().getFullYear()} Eric's Portfolio. All rights unreserved.
-            <br />
-            Furthermore, it's MIT and open-source! Check out my GitHub. 😎
-            </p>
+          © {new Date().getFullYear()} Eric's Portfolio. All rights unreserved.
+          <br />
+          Furthermore, it's MIT and open-source! Check out my GitHub. 😎
+        </p>
       </div>
     </footer>
   );
