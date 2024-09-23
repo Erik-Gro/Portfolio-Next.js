@@ -12,7 +12,7 @@ const About = () => {
 
   const handleCopy = () => {
     if (navigator?.clipboard) {
-      navigator.clipboard.writeText('2000.eric.gro@gmail.com');
+      navigator.clipboard.writeText('erik.gro@proton.me');
       setHasCopied(true);
 
       setTimeout(() => {
@@ -118,7 +118,7 @@ const About = () => {
                   width={24} 
                   height={24} 
                 />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">Eric.gro.gmail</p>
+                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">Erik.Gro@proton.me</p>
               </div>
             </div>
           </div>
