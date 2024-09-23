@@ -50,9 +50,9 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-white-500 text-sm mt-4">
-          © {new Date().getFullYear()} Eric's Portfolio. All rights unreserved.
+          © {new Date().getFullYear()} Eric&apos;s Portfolio. All rights unreserved.
           <br />
-          Furthermore, it's MIT and open-source! Check out my GitHub. 😎
+          Furthermore, it&apos;s MIT and open-source! Check out my GitHub. 😎
         </p>
       </div>
     </footer>
