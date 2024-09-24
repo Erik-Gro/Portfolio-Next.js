@@ -4,17 +4,19 @@ import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { PerspectiveCamera, Stars } from '@react-three/drei';
 import CanvasLoader from '@/shared/loaders/CanvasLoader';
-import ReactLogo from './components/ReactLogo';
 import useCalculateSizes from './data/Sizes';
 import { useMediaQuery } from 'react-responsive';
-import Macbook from './components/Macbook';
 import Rotate from '../utils/Rotate';
-import Target from './components/Target';
-import Cube from './components/Cube';
-import Rings from './components/Rings';
 import Button from '@/shared/components/button.tsx/Button';
-import Room from './components/Room';
-import PythonLogo from './components/PythonLogo';
+import dynamic from 'next/dynamic';
+
+const ReactLogo = dynamic(() => import('./components/ReactLogo'), { ssr: false });
+const Macbook = dynamic(() => import('./components/Macbook'), { ssr: false });
+const PythonLogo = dynamic(() => import('./components/PythonLogo'), { ssr: false });
+const Target = dynamic(() => import('./components/Target'), { ssr: false });
+const Cube = dynamic(() => import('./components/Cube'), { ssr: false });
+const Rings = dynamic(() => import('./components/Rings'), { ssr: false });
+const Room = dynamic(() => import('./components/Room'), { ssr: false });
 
 export function Main() {
 

@@ -5,8 +5,10 @@ import { Center, OrbitControls } from '@react-three/drei';
 import { useTrail, animated } from '@react-spring/web'; 
 import { myProjects } from './vars/data';
 import CanvasLoader from '@/shared/loaders/CanvasLoader';
-import DemoComputer from './components/DemoComputer';
 import Image from 'next/image'; 
+import dynamic from 'next/dynamic';
+
+const DemoComputer = dynamic(() => import('./components/DemoComputer'), { ssr: false });
 
 const projectCount = myProjects.length;
 

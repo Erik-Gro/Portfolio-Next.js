@@ -4,9 +4,11 @@ import { Suspense, memo, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import CanvasLoader from '@/shared/loaders/CanvasLoader';
-import Developer from './components/developer';
 import { knowledgeData } from './data/knowledgeData';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+const Developer = dynamic(() => import('./components/developer'), { ssr: false });
 
 const Knowledge = () => {
   const [animationName, setAnimationName] = useState('idle');
