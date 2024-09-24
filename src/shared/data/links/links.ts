@@ -15,9 +15,9 @@ export const Links = [
       name: 'Work',
       href: '#work',
     },
-    // {
-    //   id: 4,
-    //   name: 'Contact',
-    //   href: '#contact',
-    // },
+    {
+      id: 4,
+      name: 'Expirience',
+      href: '#expirience',
+    },
   ];
