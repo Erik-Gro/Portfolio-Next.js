@@ -8,7 +8,7 @@ import CanvasLoader from '@/shared/loaders/CanvasLoader';
 import Image from 'next/image'; 
 import dynamic from 'next/dynamic';
 
-const DemoComputer = dynamic(() => import('./components/DemoComputer'), { ssr: false });
+const DemoComputer = dynamic(() => import('./components/DemoComputer'), { ssr: false, loading: () => <CanvasLoader />  });
 
 const projectCount = myProjects.length;
 
