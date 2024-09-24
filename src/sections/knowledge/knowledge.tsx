@@ -46,8 +46,7 @@ const Knowledge = () => {
                         src={item.icon}
                         alt={item.name}  
                         width={100}     
-                        height={100}     
-                        layout="responsive"  
+                        height={100}       
                       />
                     </div>
 
