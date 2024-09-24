@@ -16,7 +16,7 @@ const PythonLogo = dynamic(() => import('./components/PythonLogo'), { ssr: false
 const Target = dynamic(() => import('./components/Target'), { ssr: false });
 const Cube = dynamic(() => import('./components/Cube'), { ssr: false });
 const Rings = dynamic(() => import('./components/Rings'), { ssr: false });
-const Room = dynamic(() => import('./components/Room'), { ssr: false });
+const Room = dynamic(() => import('./components/Room'), { ssr: false, loading: () => <CanvasLoader /> });
 
 export function Main() {
 
