@@ -34,9 +34,9 @@ const About = () => {
               height={276} 
             />
             <div>
-              <p className="grid-headtext">Hi, I’m Eric Gro</p>
+              <p className="grid-headtext">I’m Eric Gro</p>
               <p className="grid-subtext">
-              Hi, I’m Eric Gro. I’m passionate about crafting responsive, visually appealing UIs and developing secure, scalable backends.
+              I’m a passionate developer who loves crafting responsive, visually appealing UIs and developing secure, scalable backends.
               </p>
             </div>
           </div>
