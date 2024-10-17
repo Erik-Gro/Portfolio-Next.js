@@ -36,7 +36,7 @@ const Footer = () => {
             />
           </a>
           <a
-            href="https://github.com/ericgro2000"
+            href="https://github.com/erik-gro"
             className="social-icon"
             target="_blank"
             rel="noopener noreferrer"
