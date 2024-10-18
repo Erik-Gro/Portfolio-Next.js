@@ -1,6 +1,6 @@
 import About from "@/sections/about/About";
 import Footer from "@/sections/footer/Footer";
-import Knowledge from "@/sections/knowledge/knowledge";
+// import Knowledge from "@/sections/knowledge/knowledge";
 import { Main } from "@/sections/main/Main";
 import Navbar from "@/sections/navbar/Navbar";
 import Projects from "@/sections/projects/Projects";
