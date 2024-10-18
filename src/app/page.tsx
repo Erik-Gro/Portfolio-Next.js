@@ -15,7 +15,7 @@ export default function Home() {
       <Navbar />
       <Main />
       <About />
-      <Knowledge/>
+      {/* <Knowledge/> */}
       <Projects />
       <Footer/>
     </main>
