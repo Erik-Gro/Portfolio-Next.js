@@ -18,30 +18,17 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
       document.body.classList.add('no-scroll');
 
       if (iframe) {
-        const randomGame = Math.floor(Math.random() * 4);
-
-        let gamePath = '';
-        switch (randomGame) {
-          case 0:
-            gamePath = '/games/snake/game.html';
-            break;
-          case 1:
-            gamePath = '/games/tetris/game.html';
-            break;
-          case 2:
-            gamePath = '/games/ttfe/game.html';
-            break;
-          case 3:
-            gamePath = '/games/mineSweeper/game.html';
-            break;
-          default:
-            gamePath = '/games/tetris/game.html';
-        }
-
-        iframe.src = gamePath;
+        const gamePaths = [
+          '/games/snake/game.html',
+          '/games/tetris/game.html',
+          '/games/ttfe/game.html',
+          '/games/mineSweeper/game.html'
+        ];
+        const randomGame = Math.floor(Math.random() * gamePaths.length);
+        iframe.src = gamePaths[randomGame];
 
         iframe.onload = () => {
-          iframe?.focus();
+          iframe.focus();
         };
       }
     } else {
@@ -71,7 +58,7 @@ const GameModal: React.FC<GameModalProps> = ({ isOpen, onClose }) => {
           className="absolute right-0 text-gray-500 hover:text-gray-800"
           onClick={onClose}
         >
-          <Image src="/assets/close.svg" alt="close" width={24} height={24} />
+          <Image src="/assets/close.svg" alt="Close the game modal" width={24} height={24} />
         </button>
         <iframe
           ref={iframeRef}
