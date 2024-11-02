@@ -1,7 +1,7 @@
 import { useRef, useEffect, memo } from 'react';
 import { useGLTF, useVideoTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
-import { Group, Mesh, MeshStandardMaterial, Vector3 } from 'three';
+import { Group, Mesh, MeshStandardMaterial } from 'three';
 import { GLTF } from 'three-stdlib';
 
 interface DemoComputerProps {
