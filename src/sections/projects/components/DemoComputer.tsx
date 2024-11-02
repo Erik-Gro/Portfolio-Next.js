@@ -49,7 +49,7 @@ const DemoComputer = (props: DemoComputerProps) => {
       txt.flipY = false;
     }
   }, [txt]);
-
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (group.current) {
       if(props.cameraRef.current){
@@ -62,6 +62,7 @@ const DemoComputer = (props: DemoComputerProps) => {
       }
     }
   }, [txt, props.direction]);
+   /* eslint-enable react-hooks/exhaustive-deps */
 
   useFrame((state, delta) => {
     if (group.current) {
