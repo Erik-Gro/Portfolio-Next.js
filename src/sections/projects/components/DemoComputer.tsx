@@ -1,13 +1,14 @@
-import { useRef, useEffect, memo } from 'react';
+import { useRef, useEffect, memo, MutableRefObject } from 'react';
 import { useGLTF, useVideoTexture } from '@react-three/drei';
 import { useFrame } from '@react-three/fiber';
 import { Group, Mesh, MeshStandardMaterial } from 'three';
 import { GLTF } from 'three-stdlib';
+import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 
 interface DemoComputerProps {
   texture?: string;
   direction?: string;
-  cameraRef:any;
+  cameraRef:MutableRefObject<OrbitControlsImpl | null>;
 }
 
 type GLTFResult = GLTF & {

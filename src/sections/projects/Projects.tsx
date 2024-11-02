@@ -7,6 +7,7 @@ import { myProjects } from './vars/data';
 import CanvasLoader from '@/shared/loaders/CanvasLoader';
 import Image from 'next/image'; 
 import dynamic from 'next/dynamic';
+import { OrbitControls as OrbitControlsImpl } from 'three-stdlib'
 
 const DemoComputer = dynamic(() => import('./components/DemoComputer'), { ssr: false, loading: () => <CanvasLoader />  });
 
@@ -16,7 +17,7 @@ const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const [direction, setDirection] = useState('');
 
-  const cameraRef = useRef(null)
+  const cameraRef = useRef<OrbitControlsImpl | null>(null); // Type the ref
 
   const handleNavigation = (direction:string) => {
     setSelectedProjectIndex((prevIndex) => {
