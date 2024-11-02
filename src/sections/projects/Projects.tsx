@@ -1,5 +1,5 @@
 "use client"
-import { Suspense, memo, useEffect, useState } from 'react';
+import { Suspense, memo, useEffect, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import { useTrail, animated } from '@react-spring/web'; 
@@ -14,7 +14,9 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-  const [direction, setDirection] = useState(''); 
+  const [direction, setDirection] = useState('');
+
+  const cameraRef = useRef(null)
 
   const handleNavigation = (direction:string) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -143,11 +145,11 @@ const Projects = () => {
             <Center>
               <Suspense fallback={<CanvasLoader />}>
                 <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} direction={direction}/>
+                  <DemoComputer texture={currentProject.texture} direction={direction} cameraRef={cameraRef}/>
                 </group>
               </Suspense>
             </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} ref={cameraRef}/>
           </Canvas>
         </div>
       </div>
