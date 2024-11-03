@@ -30,8 +30,13 @@ export const myProjects = [
         },
         {
           id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Hono',
+          path: '/assets/hono.png',
+        },
+        {
+          id: 5,
+          name: 'PostgreSQL',
+          path: '/assets/postgres.png',
         },
       ],
     },
@@ -66,8 +71,13 @@ export const myProjects = [
         },
         {
           id: 4,
-          name: 'Framer Motion',
-          path: '/assets/framer.png',
+          name: 'Convex',
+          path: '/assets/convex.png',
+        },
+        {
+          id: 5,
+          name: 'PostgreSQL',
+          path: '/assets/postgres.png',
         },
       ],
     },
