@@ -74,11 +74,6 @@ export const myProjects = [
           name: 'Convex',
           path: '/assets/convex.png',
         },
-        {
-          id: 5,
-          name: 'PostgreSQL',
-          path: '/assets/postgres.png',
-        },
       ],
     },
     // {
