@@ -17,7 +17,7 @@ const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
   const [direction, setDirection] = useState('');
 
-  const cameraRef = useRef<OrbitControlsImpl | null>(null); // Type the ref
+  const cameraRef = useRef<OrbitControlsImpl | null>(null); 
 
   const handleNavigation = (direction:string) => {
     setSelectedProjectIndex((prevIndex) => {
