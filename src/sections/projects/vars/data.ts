@@ -5,6 +5,7 @@ export const myProjects = [
       subdesc: 'Utilize powerful design tools like image cropping and text effects, and easily share your creations with friends, colleagues, and developers for seamless distribution across multiple platforms.',          
       href: 'https://crafty-by-eric-gro.vercel.app',
       texture: '/textures/project/CraftyDemo.mp4',
+      logo: '/assets/project-logo5.png',
       logoStyle: {
         backgroundColor: '#1C1A43',
         border: '0.2px solid #252262',
@@ -47,11 +48,11 @@ export const myProjects = [
       texture: '/textures/project/CommingleDemo.mp4',
       logo: '/assets/project-logo4.png',
       logoStyle: {
-        backgroundColor: '#2A1816',
-        border: '0.2px solid #36201D',
-        boxShadow: '0px 0px 60px 0px #AA3C304D',
+        backgroundColor: '#13202F',
+        border: '0.2px solid #17293E',
+        boxShadow: '0px 0px 60px 0px #2F6DB54D',
       },
-      spotlight: '/assets/spotlight1.png',
+      spotlight: '/assets/spotlight2.png',
       tags: [
         {
           id: 1,
