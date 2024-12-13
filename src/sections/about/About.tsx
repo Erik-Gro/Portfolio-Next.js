@@ -54,7 +54,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-              I specialize in a diverse range of languages and frameworks, with a primary focus on JavaScript, Python, and C#. I excel in utilizing these technologies to create robust and scalable applications
+              I work with a variety of programming languages and frameworks, with a strong focus on JavaScript, Python, and C#. I enjoy using these tools to build powerful and easy-to-maintain applications.
               </p>
             </div>
           </div>
@@ -76,7 +76,7 @@ const About = () => {
             </div>
             <div>
               <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-              <p className="grid-subtext">I&apos;m based in Kassel, Germany and open to remote work worldwide.</p>
+              <p className="grid-subtext">I&apos;m based in Kassel, Germany.</p>
               <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
