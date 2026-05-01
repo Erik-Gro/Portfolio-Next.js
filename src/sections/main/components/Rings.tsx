@@ -52,7 +52,6 @@ import * as THREE from 'three';
 import { ThreeObjectProps } from '../types/shared';
 
 const Rings: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0] }) => {
-  // 1. Initialize the ref with an empty array of the specific length
   const refList = useRef<(THREE.Mesh | null)[]>([]);
 
   const texture = useTexture('textures/rings.png');
@@ -63,12 +62,10 @@ const Rings: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0] }) => {
     refList.current.forEach((mesh, index) => {
       if (!mesh) return;
 
-      // 2. Optimized rotation logic
       const speed = 0.5 + index * 0.2;
       mesh.rotation.x = elapsedTime * speed;
       mesh.rotation.y = elapsedTime * speed * 0.8;
       
-      // Add a slight pulse effect
       const scale = 1 + Math.sin(elapsedTime + index) * 0.05;
       mesh.scale.set(scale, scale, scale);
     });
@@ -80,8 +77,8 @@ const Rings: React.FC<ThreeObjectProps> = ({ position = [0, 0, 0] }) => {
         {Array.from({ length: 4 }, (_, index) => (
           <mesh 
             key={index} 
-            // 3. Directly assign to the array index to prevent duplicates
-            ref={(el) => (refList.current[index] = el)}
+            // FIXED: Added curly braces so it returns 'void'
+            ref={(el) => { refList.current[index] = el; }}
           >
             <torusGeometry args={[(index + 1) * 0.5, 0.05, 16, 100]} />
             <meshMatcapMaterial matcap={texture} toneMapped={false} />
