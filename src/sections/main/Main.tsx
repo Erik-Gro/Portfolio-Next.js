@@ -57,7 +57,7 @@ export function Main() {
               <ReactLogo position={sizes.reactLogoPosition} scale={sizes.reactLogoScale}/>
               <Macbook position={sizes.macBookPosition}/>
               <PythonLogo  position={sizes.pythonPosition} />
-              <Target position={sizes.targetPosition} />
+              {/* <Target position={sizes.targetPosition} /> */}
               <Cube position={sizes.cubePosition} />
               <Rings position={sizes.ringPosition} /> 
             </group>
